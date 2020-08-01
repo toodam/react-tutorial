@@ -4,8 +4,13 @@ const Article = (props) => {
   return (
     <div>
       <h2> {props.title} </h2>
-      <p>順番は{props.order}です。</p>
-      <p>著者: {props.author}</p>
+      <input
+        type="checkbox"
+        checked={props.isPublished}
+        onChange={() => {
+          props.togglePublished();
+        }}
+      ></input>
     </div>
   );
 };
